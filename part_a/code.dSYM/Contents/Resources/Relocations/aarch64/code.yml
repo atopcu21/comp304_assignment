@@ -2,6 +2,7 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/ani/Code/c304 assinment/comp304_assignment/part_a/code'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003D98, symSize: 0x150 }
-  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003D98, symSize: 0x150 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _childMaker, symObjAddr: 0x0, symBinAddr: 0x100003C44, symSize: 0xFC }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _childMaker, symObjAddr: 0x0, symBinAddr: 0x100003C44, symSize: 0xFC }
+  - { offsetInCU: 0xE7, offset: 0xE7, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xFC, symBinAddr: 0x100003D40, symSize: 0x160 }
 ...
