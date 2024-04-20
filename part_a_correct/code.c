@@ -11,5 +11,6 @@ int main() {
     } else(out =5{
         // Parent process
         printf("Parent Process ID: %d, Child ID: %d\n", getpid(), out);
+        
     }
 }
