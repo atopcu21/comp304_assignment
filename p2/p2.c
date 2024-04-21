@@ -74,6 +74,10 @@ int main(int argc, char *argv[]) {
   }
 
   // Parent wait
+  double minTime = 100;
+  double maxTime = 0;
+  double totalTime = 0;
+
   for (int i = 0; i < n; i++) {
     close(pipes[i][1]); // Close write end
 
@@ -83,9 +87,22 @@ int main(int argc, char *argv[]) {
     double elapsedTime;
     read(pipes[i][0], &elapsedTime, sizeof(double));
     printf("Child %d execution time: %.3f milliseconds\n",i+1, elapsedTime);
+    
+    if (elapsedTime < minTime) {
+      minTime = elapsedTime;
+    }
+    if (elapsedTime > maxTime) {
+      maxTime = elapsedTime;
+    }
+    totalTime += elapsedTime;
 
     close(pipes[i][0]); // Close read end
   }
+
+  double averageTime = totalTime / n;
+  printf("Max: %.3f millis\n", maxTime);
+  printf("Min: %.3f millis\n", minTime);
+  printf("Average: %.3f millis\n", averageTime);
 
   return 0;
 }
